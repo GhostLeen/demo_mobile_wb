@@ -1,5 +1,8 @@
 package tests;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -9,9 +12,12 @@ import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.className;
 import static org.openqa.selenium.By.id;
 
-public class NavigationTests extends TestBase{
+@Owner("a.denyushina")
+@Epic("Mobile app wildberries")
+public class NavigationTests extends TestBase {
 
     @Test
+    @DisplayName("Main navigation buttons checking")
     void checkMainButtonsNavigationTest() {
         step("Click on Catalog button", () -> {
             $x("//android.view.View[@content-desc='Каталог']").click();
